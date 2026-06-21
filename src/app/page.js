@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="flex items-center z-0 p-30 pt-0 bg-light text-dark w-full min-h-screen">
       <Image
-        src={"/developer-pic-1.png"}
+        src={"/diwakarPublic.png"}
         alt="public profile image"
         height={500}
         width={500}
