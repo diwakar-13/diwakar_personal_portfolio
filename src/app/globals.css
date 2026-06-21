@@ -4,10 +4,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* =======================================================
+   FIXED RESPONSIVE BREAKPOINTS (Ab build fail nahi hoga)
+   ======================================================= */
+@custom-media --xs (max-width: 479px);
+@custom-media --sm (max-width: 639px);
+@custom-media --md (max-width: 767px);
+@custom-media --lg (max-width: 1023px);
+@custom-media --xl (max-width: 1279px);
+@custom-media --2xl (max-width: 1535px);
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-mont);
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -46,6 +56,66 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* ==========================================
+     TUTORIAL VALE CUSTOM COLORS
+     ========================================== */
+  --color-dark: #1b1b1b;
+  --color-light: #f5f5f5;
+  --color-primaryCustom: #b63e96;
+  --color-primaryDark: #58e6d9;
+
+  /* ==========================================
+     CUSTOM BOX SHADOW
+     ========================================== */
+  --shadow-3xl: 0 15px 15px 1px rgba(80, 230, 217, 0.4);
+
+  /* ==========================================
+     CUSTOM GRADIENTS (BACKGROUND IMAGES)
+     ========================================== */
+  --background-image-circularLight: repeating-radial-gradient(
+    rgba(0, 0, 0, 0.4) 2px,
+    #f5f5f5 5px,
+    #f5f5f5 100px
+  );
+  --background-image-circularDark: repeating-radial-gradient(
+    rgba(255, 255, 255, 0.5) 2px,
+    #1b1b1b 8px,
+    #1b1b1b 100px
+  );
+
+  --background-image-circularLightLg: repeating-radial-gradient(
+    rgba(0, 0, 0, 0.4) 2px,
+    #f5f5f5 5px,
+    #f5f5f5 80px
+  );
+  --background-image-circularDarkLg: repeating-radial-gradient(
+    rgba(255, 255, 255, 0.5) 2px,
+    #1b1b1b 8px,
+    #1b1b1b 80px
+  );
+
+  --background-image-circularLightMd: repeating-radial-gradient(
+    rgba(0, 0, 0, 0.4) 2px,
+    #f5f5f5 5px,
+    #f5f5f5 60px
+  );
+  --background-image-circularDarkMd: repeating-radial-gradient(
+    rgba(255, 255, 255, 0.5) 2px,
+    #1b1b1b 8px,
+    #1b1b1b 60px
+  );
+
+  --background-image-circularLightSm: repeating-radial-gradient(
+    rgba(0, 0, 0, 0.4) 2px,
+    #f5f5f5 5px,
+    #f5f5f5 40px
+  );
+  --background-image-circularDarkSm: repeating-radial-gradient(
+    rgba(255, 255, 255, 0.5) 2px,
+    #1b1b1b 8px,
+    #1b1b1b 40px
+  );
 }
 
 :root {
