@@ -3,6 +3,7 @@ import Image from "next/image";
 import AnimatedText from "./_components/AnimatedText";
 import Link from "next/link";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { SpinningText } from "@/components/ui/spinning-text";
 
 export default function Home() {
   return (
@@ -34,6 +35,31 @@ export default function Home() {
             contact
           </Link>
         </div>
+      </div>
+
+      {/* spinning text */}
+      <div className="absolute left-4 bottom-4 flex items-center justify-center w-48 h-48">
+        <SpinningText
+          radius={6}
+          duration={20}
+          className="text-md font-semibold"
+        >
+          • UI/UX Designer • Web Developer
+        </SpinningText>
+
+        <div className="absolute flex items-center justify-center w-18 h-18 rounded-full bg-black text-white font-semibold hover:bg-white hover:text-black hover:border-1 hover:border-gray-500 transition-all duration-300">
+          <Link href="mailto:diwakarpandey410@gmail.com">Hire Me</Link>
+        </div>
+      </div>
+
+      {/* light bulb */}
+      <div className="absolute right-8 bottom-4 w-30">
+        <Image
+          src="/lightbulb.svg"
+          alt="public profile image"
+          height={200}
+          width={200}
+        />
       </div>
     </main>
   );
