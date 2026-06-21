@@ -1,6 +1,7 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_components/Navbar";
+import Footer from "./_components/Footer";
 
 const geistMono = Montserrat({
   variable: "--font-mont",
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col bg-light font-sans">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
