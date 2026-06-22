@@ -30,12 +30,12 @@ const FeaturedProject = ({ type, title, summary, image, link, github }) => {
       whileInView="visible"
       variants={cardVariants}
       viewport={{ once: true, margin: "-100px" }}
-      className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light shadow-2xl p-10 relative rounded-br-2xl"
+      className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark dark:border-light dark:bg-dark bg-light shadow-2xl p-10 relative rounded-br-2xl"
     >
       {/* jb tak white card nahi aayega, ye shadow hidden rahegi (0% bleed-through) */}
       <motion.div
         variants={shadowVariants}
-        className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark"
+        className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl dark:bg-light bg-dark"
       />
 
       <Link
@@ -54,17 +54,17 @@ const FeaturedProject = ({ type, title, summary, image, link, github }) => {
         </motion.div>
       </Link>
       <div className="w-1/2 flex flex-col items-start justify-between pl-6">
-        <span className="text-pink-400 font-medium text-xl">{type}</span>
+        <span className="text-pink-400 dark:text-primaryDark font-medium text-xl">{type}</span>
         <Link href={link} className="hover:underline underline-offset-2">
           <h2 className="my-2 w-full text-left text-4xl font-bold">{title}</h2>
         </Link>
-        <p className="my-2 font-medium text-dark">{summary}</p>
+        <p className="my-2 font-medium dark:text-light text-dark">{summary}</p>
         <div className="mt-2 flex items-center">
           <Link href={github} className="w-10" target="_blank">
             <GithubIcon className="hover:scale-125 duration-300 ease-in active:scale-95" />
           </Link>
           <Link href={link} target="_blank" className="ml-4">
-            <InteractiveHoverButton className="rounded-md border-dark boeder">Visit Project</InteractiveHoverButton>
+            <InteractiveHoverButton className="rounded-md dark:border-light border-dark boeder">Visit Project</InteractiveHoverButton>
           </Link>
         </div>
       </div>
@@ -79,12 +79,12 @@ const Project = ({ title, type, image, link, github }) => {
       whileInView="visible"
       variants={cardVariants}
       viewport={{ once: true, margin: "-100px" }}
-      className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative"
+      className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid dark:border-light dark:bg-dark border-dark bg-light p-6 relative"
     >
       {/* Same dynamic variants implementation for standalone project cards */}
       <motion.div
         variants={shadowVariants}
-        className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2rem] rounded-br-3xl bg-dark"
+        className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2rem] rounded-br-3xl dark:bg-light bg-dark"
       />
 
       <Link
@@ -103,7 +103,7 @@ const Project = ({ title, type, image, link, github }) => {
         </motion.div>
       </Link>
       <div className="w-full flex flex-col items-start justify-between pt-4">
-        <span className="text-pink-400 font-medium text-xl">{type}</span>
+        <span className="text-pink-400 dark:text-primaryDark font-medium text-xl">{type}</span>
         <Link href={link} className="hover:underline underline-offset-2">
           <h2 className="my-2 w-full text-left text-3xl font-bold">{title}</h2>
         </Link>

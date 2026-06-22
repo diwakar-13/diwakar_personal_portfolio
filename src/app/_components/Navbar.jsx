@@ -11,6 +11,7 @@ import {
   LinkedInIcon,
   TwitterIcon,
 } from "@/components/Icon";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
 const CustomLink = ({ title, href, className = "" }) => {
   const pathName = usePathname();
@@ -20,7 +21,7 @@ const CustomLink = ({ title, href, className = "" }) => {
       {title}
 
       <span
-        className={`h-[1px] w-0 bg-dark inline-block absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${pathName === href ? "w-full" : "w-0  "} `}
+        className={`h-[1px] w-0 bg-dark inline-block absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 dark:bg-light ${pathName === href ? "w-full" : "w-0  "} `}
       >
         &nbsp;
       </span>
@@ -77,12 +78,13 @@ const Navbar = () => {
         <motion.a
           href={"/"}
           target={"_blank"}
-          className="w-6 ml-3"
+          className="w-6 mx-3"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
         >
           <TwitterIcon />
         </motion.a>
+        <AnimatedThemeToggler duration={700} variant={"circle"} className="ml-1 cursor-pointer transition-all duration-200 hover:-translate-y-0.5" />
       </nav>
       <div className="absolute left-[50%] top-2 translate-x-[50%]">
         <Logo />

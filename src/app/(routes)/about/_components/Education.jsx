@@ -6,7 +6,7 @@ import { GraduationCap, Calendar, MapPin } from "lucide-react";
 export default function Education() {
   return (
     <motion.div
-      // Tagda Animation Properties
+      
       initial={{ opacity: 0, y: 50, scale: 0.96 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       whileHover={{
@@ -21,12 +21,12 @@ export default function Education() {
         duration: 0.6,
       }}
       viewport={{ once: true, margin: "-100px" }}
-      className="w-full rounded-2xl border border-dark/10 p-6 text-left shadow-sm hover:shadow-xl transition-shadow duration-300"
+      className="w-full rounded-2xl border border-dark/10 dark:border-light/10  p-6 text-left shadow-sm hover:shadow-xl transition-shadow duration-300"
     >
-      <h2 className="mb-5 text-xl flex items-center gap-2 font-bold uppercase text-dark/75">
-        <span className="text-dark">
+      <h2 className="mb-5 text-xl flex items-center gap-2 font-bold uppercase dark:text-zinc-400 text-dark/75">
+        <span className="dark:text-light text-dark">
           <GraduationCap className="w-10 h-10" />
-        </span>{" "}
+        </span>
         Education
       </h2>
 
@@ -37,21 +37,21 @@ export default function Education() {
         <br />& Machine Learning
       </p>
 
-      <div className="w-full h-px bg-dark/20 my-6" />
+      <div className="w-full h-px dark:bg-light bg-dark/20 my-6" />
 
       <div className="flex items-center gap-2 mb-2">
         <MapPin className="w-5 h-5" />
         <span className="font-semibold text-lg">LNCT University</span>
       </div>
 
-      <p className="text-dark/70 mb-5">Bhopal</p>
+      <p className="dark:text-zinc-300 text-dark/70 mb-5">Bhopal</p>
 
       <div className="flex items-center justify-start gap-2 mb-6">
         <Calendar className="w-5 h-5" />
         <span className="font-medium">2023 — 2027</span>
       </div>
 
-      <p className="text-sm leading-relaxed text-dark/75">
+      <p className="text-sm leading-relaxed dark:text-zinc-300 text-dark/75">
         Focused on Full Stack Development, Software Engineering, and Generative
         AI.
       </p>

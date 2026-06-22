@@ -31,9 +31,8 @@ const Skill = ({ name, x, y, icon: Icon, bgColor, textColor }) => {
       className="flex items-center justify-center gap-2 rounded-full font-semibold py-3 px-6 shadow-dark cursor-pointer absolute"
       whileHover={{ scale: 1.05 }}
       initial={{ x: 0, y: 0 }}
-      whileInView={{ x: x, y: y }}
+      whileInView={{ x: x, y: y, transition: { duration: 1.5 } }}
       viewport={{ once: true }}
-      transition={{ duration: 1.5 }}
     >
       {Icon && <Icon className="w-5 h-5" style={{ color: textColor }} />}
       <span>{name}</span>
@@ -45,10 +44,9 @@ const Skills = () => {
   return (
     <>
       <h1 className="text-8xl w-full text-center mt-64 font-bold">Skills</h1>
-      <div className="w-full h-screen relative flex items-center justify-center rounded-full bg-circularLight">
+      <div className="w-full h-screen relative flex items-center justify-center rounded-full dark:bg-circularDark bg-circularLight">
         <motion.div
-          style={{ backgroundColor: "#0f172a", color: "#ffffff" }}
-          className="flex items-center justify-center gap-2 rounded-full font-semibold p-5 shadow-dark cursor-pointer"
+          className="flex items-center justify-center gap-2 rounded-full dark:bg-light dark:text-dark bg-dark text-light font-semibold p-6 shadow-dark cursor-pointer"
           whileHover={{ scale: 1.05 }}
         >
           <HiSquare3Stack3D className="w-5 h-5" />
