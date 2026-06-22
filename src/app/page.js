@@ -6,7 +6,7 @@ import AnimatedText from "./_components/AnimatedText";
 
 export default function Home() {
   return (
-    <main className="flex items-center z-0 p-30 pt-0 bg-light text-dark w-full min-h-screen">
+    <main className="flex items-center z-0 p-30 pt-0 bg-light dark:bg-dark dark:text-light text-dark w-full min-h-screen">
       <Image
         src={"/diwakarPublic.png"}
         alt="public profile image"
@@ -27,7 +27,7 @@ export default function Home() {
         </p>
         <div className="flex items-center self-start mt-2 gap-4">
           <Link href="/resume.pdf" target="_blank" download={true}>
-            <InteractiveHoverButton className="border-black">
+            <InteractiveHoverButton className="border-black dark:border-light">
               Resume
             </InteractiveHoverButton>
           </Link>
@@ -43,7 +43,7 @@ export default function Home() {
           • Full Stack Developer • Gen AI Enthusiast
         </SpinningText>
 
-        <div className="absolute flex items-center justify-center w-20 h-20 rounded-full bg-black text-white font-semibold hover:bg-white hover:text-black hover:border-1 hover:border-gray-500 transition-all duration-300">
+        <div className="absolute flex items-center justify-center w-20 h-20 rounded-full bg-black text-white font-semibold hover:bg-white hover:text-black hover:border-1  dark:bg-light dark:text-dark dark:hover:bg-dark cursor-pointer dark:hover:text-light hover:border-gray-500 transition-all duration-300 ">
           <Link href="mailto:diwakarpandey410@gmail.com">Hire Me</Link>
         </div>
       </div>

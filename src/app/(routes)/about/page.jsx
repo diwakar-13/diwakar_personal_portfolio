@@ -11,22 +11,21 @@ export const metadata = {
 export default function Page() {
   return (
     <main className="flex w-full p-32 pt-16 flex-col items-center justify-center">
-      <AnimatedText
-        text="Building Products With Purpose."
-        className="mb-16"
-      />
+      <AnimatedText text="Building Products With Purpose." className="mb-16" />
 
       <div className="grid w-full grid-cols-8 gap-16">
         {/* Biography */}
         <div className="col-span-3 flex flex-col items-start justify-start">
-          <h2 className="mb-4 text-lg font-bold uppercase text-dark/75">
+          <h2 className="mb-4 text-lg font-bold uppercase dark:text-light text-dark/75">
             Biography
           </h2>
 
           <p className="font-medium">
             Hi, I'm{" "}
-            <span className="font-bold text-xl text-dark">Diwakar Pandey</span>,
-            a Full Stack Developer passionate about building modern web
+            <span className="font-bold text-xl dark:text-light text-dark">
+              Diwakar Pandey
+            </span>
+            , a Full Stack Developer passionate about building modern web
             applications, exploring Generative AI, and turning ideas into
             meaningful digital products.
           </p>
@@ -45,8 +44,8 @@ export default function Page() {
         </div>
 
         {/* Image */}
-        <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8">
-          <div className="absolute top-0 -right-3 -z-10 h-[103%] w-[102%] rounded-[2rem] bg-dark" />
+        <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark dark:bg-dark dark:border-light bg-light p-8">
+          <div className="absolute top-0 -right-3 -z-10 h-[103%] w-[102%] rounded-[2rem] bg-dark dark:bg-light" />
 
           <Image
             src="/developer-pic-2.jpg"
