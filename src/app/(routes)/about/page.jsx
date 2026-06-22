@@ -2,6 +2,7 @@ import Image from "next/image";
 import Education from "./_components/Education";
 import AnimatedText from "@/app/_components/AnimatedText";
 import Skills from "./_components/Skills";
+import Experience from "./_components/Experience";
 export const metadata = {
   title: "About | Diwakar Pandey",
   description: "About Diwakar Pandey portfolio",
@@ -63,6 +64,7 @@ export default function Page() {
       </div>
 
       <Skills />
+      <Experience />
     </main>
   );
 }
