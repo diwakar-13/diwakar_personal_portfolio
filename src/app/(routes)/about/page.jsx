@@ -13,7 +13,7 @@ export default function Page() {
     <main className="flex w-full p-32 pt-16 flex-col items-center justify-center">
       <AnimatedText
         text="Building Products With Purpose."
-        className="!text-7xl mb-16"
+        className="mb-16"
       />
 
       <div className="grid w-full grid-cols-8 gap-16">
