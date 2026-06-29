@@ -13,9 +13,11 @@ export default function Home() {
         height={500}
         width={500}
         className="w-1/2 h-auto "
+        preload
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
       />
       <div className="w-1/2 flex flex-col items-center self-center">
-        <AnimatedText 
+        <AnimatedText
           text="Turning Vision Into Reality With Code And Design."
           className="!text-6xl !text-left"
         />

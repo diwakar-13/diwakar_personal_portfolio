@@ -53,6 +53,8 @@ export default function Page() {
             width={500}
             height={500}
             className="h-auto w-full rounded-2xl"
+            preload
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
           />
         </div>
 

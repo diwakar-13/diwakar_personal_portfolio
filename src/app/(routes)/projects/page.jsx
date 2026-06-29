@@ -23,6 +23,7 @@ const shadowVariants = {
   visible: { opacity: 1, transition: { duration: 0.3 } },
 };
 
+const FramerImage = motion(Image);
 const FeaturedProject = ({ type, title, summary, image, link, github }) => {
   return (
     <motion.article
@@ -43,18 +44,22 @@ const FeaturedProject = ({ type, title, summary, image, link, github }) => {
         target="_blank"
         className="w-1/2 cursor-pointer overflow-hidden rounded-2xl "
       >
-        <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
-          <Image
-            src={image}
-            width={200}
-            height={200}
-            alt={title}
-            className="w-full h-auto rounded-xl"
-          />
-        </motion.div>
+        <FramerImage
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.3 }}
+          src={image}
+          width={200}
+          height={200}
+          alt={title}
+          className="w-full h-auto rounded-xl"
+          preload
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+        />
       </Link>
       <div className="w-1/2 flex flex-col items-start justify-between pl-6">
-        <span className="text-pink-400 dark:text-primaryDark font-medium text-xl">{type}</span>
+        <span className="text-pink-400 dark:text-primaryDark font-medium text-xl">
+          {type}
+        </span>
         <Link href={link} className="hover:underline underline-offset-2">
           <h2 className="my-2 w-full text-left text-4xl font-bold">{title}</h2>
         </Link>
@@ -64,7 +69,9 @@ const FeaturedProject = ({ type, title, summary, image, link, github }) => {
             <GithubIcon className="hover:scale-125 duration-300 ease-in active:scale-95" />
           </Link>
           <Link href={link} target="_blank" className="ml-4">
-            <InteractiveHoverButton className="rounded-md dark:border-light border-dark boeder">Visit Project</InteractiveHoverButton>
+            <InteractiveHoverButton className="rounded-md dark:border-light border-dark boeder">
+              Visit Project
+            </InteractiveHoverButton>
           </Link>
         </div>
       </div>
@@ -93,17 +100,21 @@ const Project = ({ title, type, image, link, github }) => {
         className="w-full cursor-pointer overflow-hidden rounded-2xl "
       >
         <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-          <Image
+          <FramerImage
             src={image}
             width={200}
             height={200}
             alt={title}
             className="w-full h-auto rounded-xl"
+            preload
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
           />
         </motion.div>
       </Link>
       <div className="w-full flex flex-col items-start justify-between pt-4">
-        <span className="text-pink-400 dark:text-primaryDark font-medium text-xl">{type}</span>
+        <span className="text-pink-400 dark:text-primaryDark font-medium text-xl">
+          {type}
+        </span>
         <Link href={link} className="hover:underline underline-offset-2">
           <h2 className="my-2 w-full text-left text-3xl font-bold">{title}</h2>
         </Link>
