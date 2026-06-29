@@ -35,7 +35,7 @@ const Navbar = () => {
         <CustomLink title="Home" href={"/"} className="mr-4" />
         <CustomLink title="About" href={"/about"} className="mx-4" />
         <CustomLink title="Projects" href={"/projects"} className="mx-4" />
-        <CustomLink title="Articles" href={"/articles"} className="ml-4" />
+        <CustomLink title="Contact" href={"/contact"} className="ml-4" />
       </nav>
 
       <nav className="flex items-center justify-center flex-wrap">
