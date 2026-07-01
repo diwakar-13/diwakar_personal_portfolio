@@ -2,7 +2,6 @@
 
 import AnimatedText from "@/app/_components/AnimatedText";
 import { GithubIcon } from "@/components/Icon";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -24,6 +23,7 @@ const shadowVariants = {
 };
 
 const FramerImage = motion(Image);
+
 const FeaturedProject = ({ type, title, summary, image, link, github }) => {
   return (
     <motion.article
@@ -31,45 +31,46 @@ const FeaturedProject = ({ type, title, summary, image, link, github }) => {
       whileInView="visible"
       variants={cardVariants}
       viewport={{ once: true, margin: "-100px" }}
-      className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark dark:border-light dark:bg-dark bg-light shadow-2xl p-10 relative rounded-br-2xl"
+      className="w-[calc(100%-8px)] lg:w-[calc(100%-12px)] sm:w-full mx-auto flex flex-col lg:flex-row items-center justify-between rounded-3xl border border-solid border-dark dark:border-light dark:bg-dark bg-light shadow-2xl p-6 sm:p-10 relative rounded-br-2xl gap-6 lg:gap-0"
     >
-      {/* jb tak white card nahi aayega, ye shadow hidden rahegi (0% bleed-through) */}
       <motion.div
         variants={shadowVariants}
-        className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl dark:bg-light bg-dark"
+        className="absolute top-0 -right-2 sm:-right-3 -z-10 h-[102%] sm:h-[103%] w-[102%] rounded-[2.5rem] rounded-br-3xl dark:bg-light bg-dark"
       />
 
       <Link
         href={link}
         target="_blank"
-        className="w-1/2 cursor-pointer overflow-hidden rounded-2xl "
+        className="w-full lg:w-1/2 cursor-pointer overflow-hidden rounded-2xl"
       >
         <FramerImage
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
           src={image}
-          width={200}
-          height={200}
+          width={500}
+          height={500}
           alt={title}
           className="w-full h-auto rounded-xl"
-          preload
+          priority={true}
+          fetchPriority="high"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
         />
       </Link>
-      <div className="w-1/2 flex flex-col items-start justify-between pl-6">
-        <span className="text-pink-400 dark:text-primaryDark font-medium text-xl">
+
+      <div className="w-full lg:w-1/2 flex flex-col items-start justify-between pl-0 lg:pl-6">
+        <span className="text-pink-400 dark:text-primaryDark font-medium text-base sm:text-xl">
           {type}
         </span>
         <Link href={link} className="hover:underline underline-offset-2">
-          <h2 className="my-2 w-full text-left text-4xl font-bold">{title}</h2>
+          <h2 className="my-2 w-full text-left text-2xl sm:text-4xl font-bold break-words">{title}</h2>
         </Link>
-        <p className="my-2 font-medium dark:text-light text-dark">{summary}</p>
+        <p className="my-2 font-medium text-sm sm:text-base dark:text-light text-dark leading-relaxed">{summary}</p>
         <div className="mt-2 flex items-center">
-          <Link href={github} className="w-10" target="_blank">
+          <Link href={github} className="w-9 sm:w-10" target="_blank">
             <GithubIcon className="hover:scale-125 duration-300 ease-in active:scale-95" />
           </Link>
           <Link href={link} target="_blank" className="ml-4">
-            <InteractiveHoverButton className="rounded-md dark:border-light border-dark boeder">
+            <InteractiveHoverButton className="rounded-md dark:border-light border-dark border text-sm sm:text-base">
               Visit Project
             </InteractiveHoverButton>
           </Link>
@@ -86,48 +87,47 @@ const Project = ({ title, type, image, link, github }) => {
       whileInView="visible"
       variants={cardVariants}
       viewport={{ once: true, margin: "-100px" }}
-      className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid dark:border-light dark:bg-dark border-dark bg-light p-6 relative"
+      className="w-[calc(100%-8px)] lg:w-[calc(100%-12px)] sm:w-full mx-auto flex flex-col items-center justify-center rounded-2xl border border-solid dark:border-light dark:bg-dark border-dark bg-light p-4 sm:p-6 relative"
     >
-      {/* Same dynamic variants implementation for standalone project cards */}
       <motion.div
         variants={shadowVariants}
-        className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2rem] rounded-br-3xl dark:bg-light bg-dark"
+        className="absolute top-0 -right-2 sm:-right-3 -z-10 h-[103%] sm:h-[103%] w-[102%] rounded-[2rem] rounded-br-3xl dark:bg-light bg-dark"
       />
 
       <Link
         href={link}
         target="_blank"
-        className="w-full cursor-pointer overflow-hidden rounded-2xl "
+        className="w-full cursor-pointer overflow-hidden rounded-2xl"
       >
         <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
           <FramerImage
             src={image}
-            width={200}
-            height={200}
+            width={500}
+            height={500}
             alt={title}
             className="w-full h-auto rounded-xl"
-            preload
+            priority={true}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
           />
         </motion.div>
       </Link>
       <div className="w-full flex flex-col items-start justify-between pt-4">
-        <span className="text-pink-400 dark:text-primaryDark font-medium text-xl">
+        <span className="text-pink-400 dark:text-primaryDark font-medium text-sm sm:text-xl">
           {type}
         </span>
         <Link href={link} className="hover:underline underline-offset-2">
-          <h2 className="my-2 w-full text-left text-3xl font-bold">{title}</h2>
+          <h2 className="my-2 w-full text-left text-xl sm:text-3xl font-bold break-words">{title}</h2>
         </Link>
         <div className="mt-2 flex items-center justify-between w-full">
           <Link
             href={link}
             target="_blank"
-            className=" underline text-lg font-semibold "
+            className="underline text-base sm:text-lg font-semibold"
           >
             Visit
           </Link>
-          <Link href={github} className="w-8" target="_blank">
-            <GithubIcon className="hover:scale-125 ease-in duration-200 active:scale-95 " />
+          <Link href={github} className="w-7 sm:w-8" target="_blank">
+            <GithubIcon className="hover:scale-125 ease-in duration-200 active:scale-95" />
           </Link>
         </div>
       </div>
@@ -137,10 +137,14 @@ const Project = ({ title, type, image, link, github }) => {
 
 const page = () => {
   return (
-    <main className="flex w-full p-32 pt-16 flex-col items-center justify-center">
-      <AnimatedText text="Imagination Trumps Knowledge!" className="mb-16" />
+    // FIX: Core structural heights are un-bounded. Removed 'block' and inner structural wraps to completely remove secondary vertical scroll tracking.
+    <main className="flex w-full p-4 px-4 mb-20 sm:px-8 md:px-12 lg:px-20 xl:px-32 pt-10 lg:pt-16 flex-col items-center justify-center dark:text-light">
+      <AnimatedText 
+        text="Imagination Trumps Knowledge!" 
+        className="mb-10 sm:mb-16 !text-4xl sm:!text-6xl lg:!text-7xl xl:!text-8xl !text-center !leading-tight" 
+      />
 
-      <div className="grid grid-cols-12 gap-24 gap-y-32">
+      <div className="grid grid-cols-12 gap-8 sm:gap-16 lg:gap-16 xl:gap-24 gap-y-16 sm:gap-y-32 max-w-[1400px] mx-auto w-full">
         <div className="col-span-12">
           <FeaturedProject
             title="Crypto Screener Application"
@@ -151,7 +155,8 @@ const page = () => {
             github="https://github.com/diwakarpandey410/crypto-screener-app"
           />
         </div>
-        <div className="col-span-6">
+        
+        <div className="col-span-12 lg:col-span-6">
           <Project
             title="Crypto Screener Application"
             type="Featured Project"
@@ -160,7 +165,7 @@ const page = () => {
             github="https://github.com/diwakarpandey410/crypto-screener-app"
           />
         </div>
-        <div className="col-span-6">
+        <div className="col-span-12 lg:col-span-6">
           <Project
             title="Crypto Screener Application"
             type="Featured Project"
@@ -169,6 +174,7 @@ const page = () => {
             github="https://github.com/diwakarpandey410/crypto-screener-app"
           />
         </div>
+        
         <div className="col-span-12">
           <FeaturedProject
             title="Crypto Screener Application"
@@ -179,7 +185,8 @@ const page = () => {
             github="https://github.com/diwakarpandey410/crypto-screener-app"
           />
         </div>
-        <div className="col-span-6">
+        
+        <div className="col-span-12 lg:col-span-6">
           <Project
             title="Crypto Screener Application"
             type="Featured Project"
@@ -188,7 +195,7 @@ const page = () => {
             github="https://github.com/diwakarpandey410/crypto-screener-app"
           />
         </div>
-        <div className="col-span-6">
+        <div className="col-span-12 lg:col-span-6">
           <Project
             title="Crypto Screener Application"
             type="Featured Project"

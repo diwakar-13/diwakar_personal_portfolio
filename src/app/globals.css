@@ -112,27 +112,59 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* Base dynamic tokens */
-  --circular-light: repeating-radial-gradient(rgba(0, 0, 0, 0.4) 2px, #f5f5f5 5px, #f5f5f5 100px);
-  --circular-dark: repeating-radial-gradient(rgba(255, 255, 255, 0.5) 2px, #1b1b1b 8px, #1b1b1b 100px);
+  --circular-light: repeating-radial-gradient(
+    rgba(0, 0, 0, 0.4) 2px,
+    #f5f5f5 5px,
+    #f5f5f5 100px
+  );
+  --circular-dark: repeating-radial-gradient(
+    rgba(255, 255, 255, 0.5) 2px,
+    #1b1b1b 8px,
+    #1b1b1b 100px
+  );
 }
 
 /* Safe Native Media Queries Outside @theme */
 @media (max-width: 1023px) {
   :root {
-    --circular-light: repeating-radial-gradient(rgba(0, 0, 0, 0.4) 2px, #f5f5f5 5px, #f5f5f5 80px);
-    --circular-dark: repeating-radial-gradient(rgba(255, 255, 255, 0.5) 2px, #1b1b1b 8px, #1b1b1b 80px);
+    --circular-light: repeating-radial-gradient(
+      rgba(0, 0, 0, 0.4) 2px,
+      #f5f5f5 5px,
+      #f5f5f5 80px
+    );
+    --circular-dark: repeating-radial-gradient(
+      rgba(255, 255, 255, 0.5) 2px,
+      #1b1b1b 8px,
+      #1b1b1b 80px
+    );
   }
 }
 @media (max-width: 767px) {
   :root {
-    --circular-light: repeating-radial-gradient(rgba(0, 0, 0, 0.4) 2px, #f5f5f5 5px, #f5f5f5 60px);
-    --circular-dark: repeating-radial-gradient(rgba(255, 255, 255, 0.5) 2px, #1b1b1b 8px, #1b1b1b 60px);
+    --circular-light: repeating-radial-gradient(
+      rgba(0, 0, 0, 0.4) 2px,
+      #f5f5f5 5px,
+      #f5f5f5 60px
+    );
+    --circular-dark: repeating-radial-gradient(
+      rgba(255, 255, 255, 0.5) 2px,
+      #1b1b1b 8px,
+      #1b1b1b 60px
+    );
   }
 }
 @media (max-width: 639px) {
   :root {
-    --circular-light: repeating-radial-gradient(rgba(0, 0, 0, 0.4) 2px, #f5f5f5 5px, #f5f5f5 40px);
-    --circular-dark: repeating-radial-gradient(rgba(255, 255, 255, 0.5) 2px, #1b1b1b 8px, #1b1b1b 40px);
+    --circular-light: repeating-radial-gradient(
+      rgba(0, 0, 0, 0.4) 2px,
+      #f5f5f5 5px,
+      #f5f5f5 40px
+    );
+    --circular-dark: repeating-radial-gradient(
+      rgba(255, 255, 255, 0.5) 2px,
+      #1b1b1b 8px,
+      #1b1b1b 40px
+    );
   }
 }
 
@@ -180,4 +212,45 @@
   html {
     @apply font-sans;
   }
+}
+/* Custom utility to hide scrollbars globally or on specific containers */
+/* Custom Premium Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Scrollbar ki width ekdum patli aur clean rakhne ke liye */
+}
+
+/* Scrollbar ka Track (Background) */
+::-webkit-scrollbar-track {
+  background: transparent; /* Isse track invisible rahega aur layout chipkega nahi */
+}
+
+/* Scrollbar ka Handle (Thumb) */
+::-webkit-scrollbar-thumb {
+  background: rgba(
+    13,
+    17,
+    13,
+    0.3
+  ); /* Gen AI wale purple theme se matching translucent color */
+  border-radius: 10px; /* Fully rounded premium capsule look */
+  transition: background 0.3s ease;
+}
+
+/* Jab user scrollbar par hover kare */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(
+    13,
+    17,
+    13,
+    0.6
+  ); /* Hover par thoda dark ho jayega aur smooth dikhega */
+}
+
+/* Dark mode configurations agar pure black theme chahiye track par */
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15); /* Dark mode me subtle white capsule */
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }

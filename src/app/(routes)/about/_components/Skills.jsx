@@ -96,7 +96,7 @@ const MobileSkill = ({ name, x, y, icon: Icon, bgColor, textColor }) => {
 const Skills = () => {
   return (
     <>
-      <h1 className="text-5xl md:text-6xl lg:text-8xl w-full text-center mt-20 mb-3 md:mb-5 lg:mb-0 md:mt-32 lg:mt-64 font-bold select-none">
+      <h1 className="text-5xl md:text-6xl lg:text-8xl w-full text-center mt-20 mb-3 md:mb-5 xl:mb-0 md:mt-32 xl:mt-64 font-bold select-none">
         Skills
       </h1>
 
