@@ -24,7 +24,7 @@ export default function Home() {
           text="Turning Vision Into Reality With Code And Design."
           className="!text-5xl md: lg:!text-6xl !text-center lg:!text-left font-bold"
         />
-        <p className="text-sm md:text-md lg:text-base text-center lg:text-left  my-4 font-medium max-w-xl">
+        <p className=" md:text-md lg:text-base text-center lg:text-left  my-4 font-medium max-w-xl">
           I’m a Full Stack Developer passionate about building modern web
           applications and exploring Generative AI. I enjoy turning ideas into
           real products, solving meaningful problems, and creating digital
@@ -54,7 +54,7 @@ export default function Home() {
       <div className="hidden lg:flex absolute lg:left-4 lg:bottom-4 items-center justify-center lg:w-48 lg:h-48 z-[99999] pointer-events-none">
         <SpinningText
           radius={6}
-          duration={20}
+          duration={10}
           className="lg:text-[18px] font-medium select-none pointer-events-none"
         >
           • Full Stack Developer • Gen AI Enthusiast

@@ -73,13 +73,14 @@ const Navbar = () => {
   return (
     <header className="w-full px-6 md:px-12 lg:px-32 py-8 font-medium flex items-center justify-between relative z-10 dark:text-light">
       {/* Mobile Hamburger Button */}
-      <button
+      <motion.button
+        whileTap={{ scale: 0.75 }}
         onClick={handleClick}
-        className="lg:hidden flex flex-col justify-center items-center z-20 p-2"
+        className="lg:hidden flex flex-col cursor-pointer justify-center items-center z-20 p-2"
         aria-label="Toggle Menu"
       >
         <TextAlignJustify className="w-6 h-6" />
-      </button>
+      </motion.button>
 
       {/* Desktop Navigation */}
       <div className="hidden lg:flex justify-between items-center w-full">
@@ -183,16 +184,16 @@ const Navbar = () => {
       <div className="lg:hidden absolute -top-4 right-0 flex items-center justify-center w-36 h-36 md:p-20 z-[99999] pointer-events-none">
         <SpinningText
           radius={6}
-          duration={20}
+          duration={10}
           className="text-[10px] md:text-xs font-medium select-none pointer-events-none"
         >
           • Full Stack Developer • Gen AI Enthusiast
         </SpinningText>
 
-        <div className="absolute flex items-center justify-center w-16 h-16 md:w-18 md:h-18 rounded-full bg-black text-white font-semibold hover:bg-white hover:text-black hover:border dark:bg-light dark:text-dark dark:hover:bg-dark cursor-pointer dark:hover:text-light hover:border-gray-500 transition-all duration-300 text-xs md:text-base pointer-events-auto group">
+        <div className="absolute flex items-center justify-center w-14 h-14 md:w-15 md:h-15 rounded-full bg-black text-white font-semibold hover:bg-white hover:text-black hover:border dark:bg-light dark:text-dark dark:hover:bg-dark cursor-pointer dark:hover:text-light hover:border-gray-500 transition-all duration-300 text-xs md:text-base pointer-events-auto group">
           <Link
             href="mailto:diwakarpandey410@gmail.com"
-            className="w-full h-full flex items-center justify-center rounded-full cursor-pointer relative z-[100001]"
+            className="w-full h-full flex items-center justify-center rounded-full md:text-sm cursor-pointer relative z-[100001]"
           >
             Hire Me
           </Link>

@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /* =======================================================
-   FIXED RESPONSIVE BREAKPOINTS (Ab build fail nahi hoga)
+   FIXED RESPONSIVE BREAKPOINTS 
    ======================================================= */
 @custom-media --xs (max-width: 479px);
 @custom-media --sm (max-width: 639px);
@@ -71,51 +71,10 @@
   --shadow-3xl: 0 15px 15px 1px rgba(80, 230, 217, 0.4);
 
   /* ==========================================
-     CUSTOM GRADIENTS (BACKGROUND IMAGES)
+     MAPPED TAILWIND UTILITIES (No nesting here)
      ========================================== */
-  --background-image-circularLight: repeating-radial-gradient(
-    rgba(0, 0, 0, 0.4) 2px,
-    #f5f5f5 5px,
-    #f5f5f5 100px
-  );
-  --background-image-circularDark: repeating-radial-gradient(
-    rgba(255, 255, 255, 0.5) 2px,
-    #1b1b1b 8px,
-    #1b1b1b 100px
-  );
-
-  --background-image-circularLightLg: repeating-radial-gradient(
-    rgba(0, 0, 0, 0.4) 2px,
-    #f5f5f5 5px,
-    #f5f5f5 80px
-  );
-  --background-image-circularDarkLg: repeating-radial-gradient(
-    rgba(255, 255, 255, 0.5) 2px,
-    #1b1b1b 8px,
-    #1b1b1b 80px
-  );
-
-  --background-image-circularLightMd: repeating-radial-gradient(
-    rgba(0, 0, 0, 0.4) 2px,
-    #f5f5f5 5px,
-    #f5f5f5 60px
-  );
-  --background-image-circularDarkMd: repeating-radial-gradient(
-    rgba(255, 255, 255, 0.5) 2px,
-    #1b1b1b 8px,
-    #1b1b1b 60px
-  );
-
-  --background-image-circularLightSm: repeating-radial-gradient(
-    rgba(0, 0, 0, 0.4) 2px,
-    #f5f5f5 5px,
-    #f5f5f5 40px
-  );
-  --background-image-circularDarkSm: repeating-radial-gradient(
-    rgba(255, 255, 255, 0.5) 2px,
-    #1b1b1b 8px,
-    #1b1b1b 40px
-  );
+  --background-image-circularLight: var(--circular-light);
+  --background-image-circularDark: var(--circular-dark);
 }
 
 :root {
@@ -151,6 +110,30 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Base dynamic tokens */
+  --circular-light: repeating-radial-gradient(rgba(0, 0, 0, 0.4) 2px, #f5f5f5 5px, #f5f5f5 100px);
+  --circular-dark: repeating-radial-gradient(rgba(255, 255, 255, 0.5) 2px, #1b1b1b 8px, #1b1b1b 100px);
+}
+
+/* Safe Native Media Queries Outside @theme */
+@media (max-width: 1023px) {
+  :root {
+    --circular-light: repeating-radial-gradient(rgba(0, 0, 0, 0.4) 2px, #f5f5f5 5px, #f5f5f5 80px);
+    --circular-dark: repeating-radial-gradient(rgba(255, 255, 255, 0.5) 2px, #1b1b1b 8px, #1b1b1b 80px);
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --circular-light: repeating-radial-gradient(rgba(0, 0, 0, 0.4) 2px, #f5f5f5 5px, #f5f5f5 60px);
+    --circular-dark: repeating-radial-gradient(rgba(255, 255, 255, 0.5) 2px, #1b1b1b 8px, #1b1b1b 60px);
+  }
+}
+@media (max-width: 639px) {
+  :root {
+    --circular-light: repeating-radial-gradient(rgba(0, 0, 0, 0.4) 2px, #f5f5f5 5px, #f5f5f5 40px);
+    --circular-dark: repeating-radial-gradient(rgba(255, 255, 255, 0.5) 2px, #1b1b1b 8px, #1b1b1b 40px);
+  }
 }
 
 .dark {
