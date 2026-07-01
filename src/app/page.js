@@ -6,14 +6,14 @@ import AnimatedText from "./_components/AnimatedText";
 
 export default function Home() {
   return (
-    <main className="flex flex-col lg:flex-row items-center overflow-x-hidden justify-between z-0 lg:p-30 md:p-20 p-6 pt-10 lg:pt-0 bg-light dark:bg-dark dark:text-light text-dark w-full min-h-screen gap-8 lg:gap-0">
+    <main className="flex flex-col lg:flex-row items-center overflow-x-hidden justify-between z-0 lg:p-30  md:p-20 p-4 pt-10 lg:pt-0 bg-light dark:bg-dark dark:text-light text-dark w-full min-h-screen gap-8 lg:gap-0">
       <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
         <Image
           src={"/diwakarPublic.png"}
           alt="public profile image"
           height={500}
           width={500}
-          className="w-full md:max-w-[750px] lg:max-w-full    h-auto"
+          className="w-full md:max-w-[750px] lg:max-w-full  h-auto"
           priority
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
         />
@@ -22,7 +22,7 @@ export default function Home() {
       <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left self-center">
         <AnimatedText
           text="Turning Vision Into Reality With Code And Design."
-          className="!text-5xl md: lg:!text-6xl !text-center lg:!text-left font-bold"
+          className="md:!text-5xl !text-4xl  xl:!text-6xl !text-center lg:!text-left font-bold"
         />
         <p className=" md:text-md lg:text-base text-center lg:text-left  my-4 font-medium max-w-xl">
           I’m a Full Stack Developer passionate about building modern web
@@ -71,7 +71,7 @@ export default function Home() {
       </div>
 
       {/* light bulb */}
-      <div className="hidden md:block absolute right-5 md:-bottom-135 lg:bottom-0 w-28">
+      <div className="hidden xl:block absolute right-5  xl:bottom-0 w-28">
         <Image
           src="/lightbulb.svg"
           alt="public profile image"

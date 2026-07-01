@@ -21,28 +21,28 @@ export default function Education({ className }) {
         duration: 0.6,
       }}
       viewport={{ once: true, margin: "-100px" }}
-      // FIX: Mobile screens par padding p-4/p-5 rakha hai taaki overflow na kare aur desktop par full height stretch balanced rahe.
+      // FIX: Responsive bounds structured across device profiles (p-4 for mob/tablet, scaling back gracefully on xl)
       className={cn(
-        "w-full h-full flex flex-col justify-between rounded-2xl border border-dark/10 dark:border-light/10 p-4 xs:p-5 sm:p-6 text-left shadow-sm hover:shadow-xl box-border",
+        "w-full h-full flex flex-col justify-between rounded-2xl border border-dark/10 dark:border-light/10 p-4 xs:p-5 md:p-4 lg:p-5 xl:p-6 text-left shadow-sm hover:shadow-xl box-border",
         className
       )}
     >
       <div className="w-full flex-grow">
-        {/* FIX: Heading elements compact on smaller mobile views */}
-        <h2 className="mb-4 sm:mb-5 text-sm xs:text-base sm:text-xl flex items-center gap-2 font-bold uppercase dark:text-zinc-400 text-dark/75 tracking-wider">
+        {/* FIX: Heading elements unified across lg and md layout footprints */}
+        <h2 className="mb-4 sm:mb-5 text-sm xs:text-base md:text-base lg:text-base xl:text-xl flex items-center gap-2 font-bold uppercase dark:text-zinc-400 text-dark/75 tracking-wider">
           <span className="dark:text-light text-dark flex-shrink-0">
-            <PaperclipGraduationCap className="w-6 h-6 xs:w-8 xs:h-8 sm:w-10 sm:h-10" />
+            <PaperclipGraduationCap className="w-6 h-6 xs:w-8 xs:h-8 md:w-8 md:h-8 lg:w-8 lg:h-8 xl:w-10 xl:h-10" />
           </span>
           Education
         </h2>
 
-        <h3 className="text-2xl xs:text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">B.Tech</h3>
+        <h3 className="text-2xl xs:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4">B.Tech</h3>
 
-        {/* FIX: Text scaling to avoid ugly forced line-breaks on thin mobile panels */}
-        <p className="text-sm xs:text-base sm:text-lg font-medium leading-relaxed break-words">
+        {/* FIX: Handled dynamic break strings so text aligns gracefully on md/lg sidebar tracks */}
+        <p className="text-sm xs:text-base md:text-sm lg:text-base xl:text-lg font-medium leading-relaxed break-words">
           Artificial Intelligence
-          <span className="hidden xs:inline"> & </span>
-          <br className="xs:hidden" />
+          <span className="hidden xs:inline md:hidden lg:inline"> & </span>
+          <br className="xs:hidden md:block lg:hidden" />
           Machine Learning
         </p>
 
@@ -51,21 +51,21 @@ export default function Education({ className }) {
         {/* Info cluster uses tight flex layouts */}
         <div className="flex items-center gap-2 mb-2">
           <MapPin className="w-4 h-4 xs:w-5 h-5 flex-shrink-0 text-dark/85 dark:text-light/85" />
-          <span className="font-semibold text-sm xs:text-base sm:text-lg">LNCT University</span>
+          <span className="font-semibold text-sm xs:text-base md:text-sm lg:text-base xl:text-lg">LNCT University</span>
         </div>
 
-        <p className="dark:text-zinc-300 text-dark/70 mb-4 sm:mb-5 text-xs xs:text-sm sm:text-base pl-6">
+        <p className="dark:text-zinc-300 text-dark/70 mb-4 sm:mb-5 text-xs xs:text-sm md:text-xs lg:text-sm xl:text-base pl-6">
           Bhopal
         </p>
 
         <div className="flex items-center justify-start gap-2 mb-4">
           <Calendar className="w-4 h-4 xs:w-5 h-5 flex-shrink-0 text-dark/85 dark:text-light/85" />
-          <span className="font-medium text-xs xs:text-sm sm:text-base">2023 — 2027</span>
+          <span className="font-medium text-xs xs:text-sm md:text-xs lg:text-sm xl:text-base">2023 — 2027</span>
         </div>
       </div>
 
       {/* Bottom Description Footer */}
-      <p className="text-[11px] xs:text-xs sm:text-sm leading-relaxed dark:text-zinc-300 text-dark/75 mt-auto border-t border-dashed border-dark/10 dark:border-light/10 pt-3">
+      <p className="text-[11px] xs:text-xs md:text-xs lg:text-xs xl:text-sm leading-relaxed dark:text-zinc-300 text-dark/75 mt-auto border-t border-dashed border-dark/10 dark:border-light/10 pt-3">
         Focused on Full Stack Development, Software Engineering, and Generative AI.
       </p>
     </motion.div>
