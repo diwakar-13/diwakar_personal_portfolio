@@ -7,7 +7,8 @@ import Experience from "./_components/Experience";
 
 export const metadata = {
   title: "About | Diwakar Pandey",
-  description: "About Diwakar Pandey portfolio",
+  description:
+    "About Diwakar Pandey portfolio",
 };
 
 export default function Page() {
