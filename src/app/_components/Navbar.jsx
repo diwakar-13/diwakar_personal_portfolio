@@ -52,22 +52,50 @@ const Navbar = () => {
   };
 
   const socialLinks = [
-    { href: "/", icon: <InstagramIcon />, key: "instagram" },
-    { href: "/", icon: <FacebookIcon />, key: "facebook" },
-    { href: "/", icon: <GithubIcon />, key: "github" },
-    { href: "/", icon: <LinkedInIcon />, key: "linkedin" },
-    { href: "/", icon: <TwitterIcon />, key: "twitter" },
+    {
+      href: "https://www.instagram.com/diwakar__007?igsh=NzltYTAxaHNkc2xu",
+      icon: <InstagramIcon />,
+      key: "instagram",
+    },
+    {
+      href: "https://www.facebook.com/profile.php?id=100030056957980&rdid=gFJU1qonl1b66UN4&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GAtirjFb7%2F#",
+      icon: <FacebookIcon />,
+      key: "facebook",
+    },
+    {
+      href: "https://github.com/diwakar-13",
+      icon: <GithubIcon />,
+      key: "github",
+    },
+    {
+      href: "https://www.linkedin.com/in/diwakarpandey410/",
+      icon: <LinkedInIcon />,
+      key: "linkedin",
+    },
+    { href: "https://x.com/Diwakar__13", icon: <TwitterIcon />, key: "twitter" },
   ];
   const MobileSocialLinks = [
     {
-      href: "/",
+      href: "https://www.instagram.com/diwakar__007?igsh=NzltYTAxaHNkc2xu",
       icon: <MobileInstagramIcon className="dark:text-dark " />,
       key: "instagram",
     },
-    { href: "/", icon: <FacebookIcon />, key: "facebook" },
-    { href: "/", icon: <GithubIcon />, key: "github" },
-    { href: "/", icon: <LinkedInIcon />, key: "linkedin" },
-    { href: "/", icon: <TwitterIcon />, key: "twitter" },
+    {
+      href: "https://www.facebook.com/profile.php?id=100030056957980&rdid=gFJU1qonl1b66UN4&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GAtirjFb7%2F#",
+      icon: <FacebookIcon />,
+      key: "facebook",
+    },
+    {
+      href: "https://github.com/diwakar-13",
+      icon: <GithubIcon />,
+      key: "github",
+    },
+    {
+      href: "https://www.linkedin.com/in/diwakarpandey410/",
+      icon: <LinkedInIcon />,
+      key: "linkedin",
+    },
+    { href: "https://x.com/Diwakar__13", icon: <TwitterIcon />, key: "twitter" },
   ];
 
   return (
