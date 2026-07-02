@@ -30,7 +30,7 @@ const Detail = ({ position, company, companyLink, time, address, work }) => {
           </a>
         </h3>
         <span className="capitalize font-medium dark:text-light/75 text-dark/75 text-xs sm:text-sm md:text-base block my-1">
-          {time} | {address}  
+          {time} | {address}
         </span>
         <p className="font-medium w-full text-xs sm:text-sm md:text-base leading-relaxed">
           {work}
@@ -61,28 +61,12 @@ const Experience = () => {
         />
         <ul className="flex flex-col items-start w-full justify-between pl-4 sm:ml-9 lg:ml-10 ml-3">
           <Detail
-            position="Software Engineer"
-            company="Google"
-            companyLink="https://www.google.com"
-            time="2022-Present"
-            address=" Mountain View, CA"
-            work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
-          />
-          <Detail
-            position="Software Engineer"
-            company="Google"
-            companyLink="https://www.google.com"
-            time="2022-Present"
-            address=" Mountain View, CA"
-            work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
-          />
-          <Detail
-            position="Software Engineer"
-            company="Google"
-            companyLink="https://www.google.com"
-            time="2022-Present"
-            address=" Mountain View, CA"
-            work="Worked on a team responsible for developing new features for Google's search engine, including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."
+            position="Full Stack Developer Intern"
+            company="Bireena Infotech"
+            companyLink="https://bireenainfotech.com"
+            time="April 2026 - Present"
+            address="Remote"
+            work="Contributed to the development of a Hospital Management System by building responsive React.js interfaces and developing backend modules using Node.js. Implemented Doctor Management features and integrated MongoDB to fetch and process application data. Built analytics dashboards to visualize total doctors, patients, patient demographics (male, female, and children), appointment statistics, top doctors by appointments, and laboratory report insights."
           />
         </ul>
       </div>
