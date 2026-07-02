@@ -7,6 +7,7 @@ import Link from "next/link";
 import React from "react";
 import { motion } from "motion/react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { Button } from "@/components/ui/button";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -61,7 +62,7 @@ const FeaturedProject = ({ type, title, summary, image, link, github }) => {
         <span className="text-pink-400 dark:text-primaryDark font-medium text-base sm:text-xl">
           {type}
         </span>
-        <Link href={link} className="hover:underline underline-offset-2">
+        <Link href={link} target="_blank" className="hover:underline underline-offset-2">
           <h2 className="my-2 w-full text-left text-2xl sm:text-4xl font-bold break-words">
             {title}
           </h2>
@@ -109,7 +110,7 @@ const Project = ({ title, type, image, link, github }) => {
             width={500}
             height={500}
             alt={title}
-            className="w-full h-auto rounded-xl"
+            className="w-full h-auto rounded-lg border-dark "
             priority={true}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
           />
@@ -119,7 +120,7 @@ const Project = ({ title, type, image, link, github }) => {
         <span className="text-pink-400 dark:text-primaryDark font-medium text-sm sm:text-xl">
           {type}
         </span>
-        <Link href={link} className="hover:underline underline-offset-2">
+        <Link href={link} target="_blank" className="hover:underline underline-offset-2">
           <h2 className="my-2 w-full text-left text-xl sm:text-3xl font-bold break-words">
             {title}
           </h2>
@@ -130,7 +131,8 @@ const Project = ({ title, type, image, link, github }) => {
             target="_blank"
             className="underline text-base sm:text-lg font-semibold"
           >
-            Visit
+            <Button className="active:scale-95 rounded-md cursor-pointer bg-black border-1  dark:border-light/40 border-dark dark:text-light hover:bg-light hover:text-dark dark:hover:bg-dark px-4 hover:-translate-y-1 ease-in duration-200">Visit Project</Button>
+            
           </Link>
           <Link href={github} className="w-7 sm:w-8" target="_blank">
             <GithubIcon className="hover:scale-125 ease-in duration-200 active:scale-95" />
@@ -173,11 +175,11 @@ const page = () => {
         </div>
         <div className="col-span-12 lg:col-span-6">
           <Project
-            title="Crypto Screener Application"
-            type="Featured Project"
-            image="/uiuxMockup.png"
-            link="https://crypto-screener-app.netlify.app/"
-            github="https://github.com/diwakarpandey410/crypto-screener-app"
+            title="Socially -Social Media App"
+            type="Full Stack Project"
+            image="/socially.png"
+             link="https://socially-seven-delta.vercel.app/" 
+            github="https://github.com/diwakar-13/socially" 
           />
         </div>
 
@@ -210,6 +212,7 @@ const page = () => {
             github="https://civic-complainet.vercel.app/"
           />
         </div>
+      
       </div>
     </main>
   );
