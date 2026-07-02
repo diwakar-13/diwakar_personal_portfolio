@@ -59,7 +59,7 @@ export default function Page() {
           <div className="absolute top-0 -right-3 -z-10 h-[103%] w-[102%] rounded-[2rem] rounded-br-3xl bg-dark dark:bg-light" />
 
           <Image
-            src="/developer-pic-2.jpg"
+            src="/diwakar.JPG"
             alt="Diwakar Pandey"
             width={500}
             height={500}

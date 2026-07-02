@@ -35,7 +35,7 @@ const FeaturedProject = ({ type, title, summary, image, link, github }) => {
     >
       <motion.div
         variants={shadowVariants}
-        className="absolute top-0 -right-2 sm:-right-3 -z-10 h-[102%] sm:h-[103%] w-[102%] rounded-[2.5rem] rounded-br-3xl dark:bg-light bg-dark"
+        className="absolute top-0 -right-2 sm:-right-3 -z-10 h-[102%] sm:h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl dark:bg-light bg-dark"
       />
 
       <Link
@@ -62,9 +62,13 @@ const FeaturedProject = ({ type, title, summary, image, link, github }) => {
           {type}
         </span>
         <Link href={link} className="hover:underline underline-offset-2">
-          <h2 className="my-2 w-full text-left text-2xl sm:text-4xl font-bold break-words">{title}</h2>
+          <h2 className="my-2 w-full text-left text-2xl sm:text-4xl font-bold break-words">
+            {title}
+          </h2>
         </Link>
-        <p className="my-2 font-medium text-sm sm:text-base dark:text-light text-dark leading-relaxed">{summary}</p>
+        <p className="my-2 font-medium text-sm sm:text-base dark:text-light text-dark leading-relaxed">
+          {summary}
+        </p>
         <div className="mt-2 flex items-center">
           <Link href={github} className="w-9 sm:w-10" target="_blank">
             <GithubIcon className="hover:scale-125 duration-300 ease-in active:scale-95" />
@@ -116,7 +120,9 @@ const Project = ({ title, type, image, link, github }) => {
           {type}
         </span>
         <Link href={link} className="hover:underline underline-offset-2">
-          <h2 className="my-2 w-full text-left text-xl sm:text-3xl font-bold break-words">{title}</h2>
+          <h2 className="my-2 w-full text-left text-xl sm:text-3xl font-bold break-words">
+            {title}
+          </h2>
         </Link>
         <div className="mt-2 flex items-center justify-between w-full">
           <Link
@@ -139,23 +145,32 @@ const page = () => {
   return (
     // FIX: Core structural heights are un-bounded. Removed 'block' and inner structural wraps to completely remove secondary vertical scroll tracking.
     <main className="flex w-full p-4 px-4 mb-20 sm:px-8 md:px-12 lg:px-20 xl:px-32 pt-10 lg:pt-16 flex-col items-center justify-center dark:text-light">
-      <AnimatedText 
-        text="Imagination Trumps Knowledge!" 
-        className="mb-10 sm:mb-16 !text-4xl sm:!text-6xl lg:!text-7xl xl:!text-8xl !text-center !leading-tight" 
+      <AnimatedText
+        text="Imagination Trumps Knowledge!"
+        className="mb-10 sm:mb-16 !text-4xl sm:!text-6xl lg:!text-7xl xl:!text-8xl !text-center !leading-tight"
       />
 
       <div className="grid grid-cols-12 gap-8 sm:gap-16 lg:gap-16 xl:gap-24 gap-y-16 sm:gap-y-32 max-w-[1400px] mx-auto w-full">
         <div className="col-span-12">
           <FeaturedProject
-            title="Crypto Screener Application"
-            summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your local currency."
+            title="AI UI/UX Mockup Generator"
+            summary="An AI-powered application that transforms text prompts into beautiful UI/UX screen mockups. Users simply describe their ideas in natural language, and the application generates responsive interface designs, helping designers and developers rapidly visualize concepts and accelerate the design process."
             type="Featured Project"
             image="/uiuxMockup.png"
-            link="https://crypto-screener-app.netlify.app/"
-            github="https://github.com/diwakarpandey410/crypto-screener-app"
+            link="https://ui-ux-mockup.vercel.app/"
+            github="https://github.com/diwakar-13/UI-UX-Mockup"
           />
         </div>
-        
+
+        <div className="col-span-12 lg:col-span-6">
+          <Project
+            title="Facebook UI Clone- SocialBook"
+            type="Frontend Project"
+            image="/socialbook.png"
+            link="https://socialbook-ui-demo.onrender.com"
+            github="https://github.com/diwakar-13/Facebook-clone-socialbook"
+          />
+        </div>
         <div className="col-span-12 lg:col-span-6">
           <Project
             title="Crypto Screener Application"
@@ -165,43 +180,34 @@ const page = () => {
             github="https://github.com/diwakarpandey410/crypto-screener-app"
           />
         </div>
-        <div className="col-span-12 lg:col-span-6">
-          <Project
-            title="Crypto Screener Application"
-            type="Featured Project"
-            image="/uiuxMockup.png"
-            link="https://crypto-screener-app.netlify.app/"
-            github="https://github.com/diwakarpandey410/crypto-screener-app"
-          />
-        </div>
-        
+
         <div className="col-span-12">
           <FeaturedProject
-            title="Crypto Screener Application"
-            summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your local currency."
-            type="Featured Project"
-            image="/uiuxMockup.png"
-            link="https://crypto-screener-app.netlify.app/"
-            github="https://github.com/diwakarpandey410/crypto-screener-app"
+            title="Planova-Project Management"
+            summary="Planova is a modern project management platform that enables teams to plan projects, manage tasks, track progress, and collaborate seamlessly. Built with a focus on productivity, usability, and scalability, it provides an intuitive workspace for organizing and delivering projects efficiently."
+            type="Full Stack Project"
+            image="/planova.png"
+            link="https://planova-project-management-ggk9.vercel.app/"
+            github="https://github.com/diwakar-13/Planova-project-management-"
           />
         </div>
-        
+
         <div className="col-span-12 lg:col-span-6">
           <Project
-            title="Crypto Screener Application"
-            type="Featured Project"
-            image="/uiuxMockup.png"
-            link="https://crypto-screener-app.netlify.app/"
-            github="https://github.com/diwakarpandey410/crypto-screener-app"
+            title="Basic Portfolio template"
+            type="Template"
+            image="/basic_portfolio.png"
+            link="https://diwakar-13.github.io/frontend-portfolio-project/"
+            github="https://github.com/diwakar-13/frontend-portfolio-project"
           />
         </div>
         <div className="col-span-12 lg:col-span-6">
           <Project
-            title="Crypto Screener Application"
-            type="Featured Project"
-            image="/uiuxMockup.png"
-            link="https://crypto-screener-app.netlify.app/"
-            github="https://github.com/diwakarpandey410/crypto-screener-app"
+            title="Smart civic Complainet system"
+            type="CRUD Application"
+            image="/complain.png"
+            link="https://civic-complainet.vercel.app/"
+            github="https://civic-complainet.vercel.app/"
           />
         </div>
       </div>
