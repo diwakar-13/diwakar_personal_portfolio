@@ -6,6 +6,8 @@ import AnimatedText from "@/app/_components/AnimatedText";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import Link from "next/link";
+// IMPORT AXIOS
+import axios from "axios";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -28,14 +30,42 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = (e) => {
+  // SUBMIT STATUS STATES
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
+    setIsSubmitting(true);
+    setStatusMessage({ type: "", text: "" });
+
+    try {
+      // USING AXIOS INSTEAD OF FETCH
+      const response = await axios.post("/api/contact", formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      // Axios automatically parses JSON, data is available in response.data
+      if (response.status === 200 && response.data.success) {
+        setStatusMessage({ type: "success", text: "Message sent successfully!" });
+        setFormData({ name: "", email: "", message: "" }); // Reset form inputs
+      } else {
+        setStatusMessage({ type: "error", text: response.data.error || "Something went wrong." });
+      }
+    } catch (error) {
+      // Axios stores server error responses in error.response
+      const errorMsg = error.response?.data?.error || "Failed to send message. Please try again.";
+      setStatusMessage({ type: "error", text: errorMsg });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     // FIX: Optimized padding fluid hierarchy for all viewports (p-4 for mobile, p-8 for md/tablet, p-32 for desktop lg)
-    <main className="flex w-full max-w-full overflow-x-hidden p-4 mb-20 xl:mb-0  sm:p-6 md:p-8 lg:p-32 lg:pt-16 flex-col items-center justify-center dark:text-light">
+    <main className="flex w-full max-w-full overflow-x-hidden p-4 pb-20 xl:mb-0   sm:p-6 md:p-8 lg:p-32 lg:pt-16 flex-col items-center justify-center dark:text-light">
       {/* Page Title scaling responsively */}
       <AnimatedText
         text="Let's Build Something Together!"
@@ -217,13 +247,21 @@ export default function ContactPage() {
               />
             </div>
 
+            {/* STATUS NOTIFICATION TEXT */}
+            {statusMessage.text && (
+              <p className={`text-sm font-semibold ${statusMessage.type === "success" ? "text-green-500" : "text-red-500"}`}>
+                {statusMessage.text}
+              </p>
+            )}
+
             <div className="mt-2 flex justify-start w-full">
               <Button
                 type="submit"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 p-5 sm:p-6 text-base sm:text-lg font-bold transition-transform duration-200 active:scale-95 cursor-pointer"
+                disabled={isSubmitting}
+                className="w-full sm:w-auto flex items-center justify-center gap-2 p-5 sm:p-6 text-base sm:text-lg font-bold transition-transform duration-200 active:scale-95 cursor-pointer disabled:opacity-50"
               >
                 <Send className="w-5 h-5 sm:w-6 sm:h-6" />
-                <span>Send Message</span>
+                <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
               </Button>
             </div>
           </form>

@@ -150,7 +150,7 @@ const Navbar = () => {
               />
             </nav>
 
-            <nav className="flex items-center justify-center text-light dark:text-dark fill-current flex-wrap sm:gap-4 gap-2">
+            <nav className="flex items-center justify-center text-light dark:text-dark fill-current flex-wrap  gap-4">
               {MobileSocialLinks.map(({ href, icon, key }) => {
                 return (
                   <motion.a
@@ -159,7 +159,7 @@ const Navbar = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     // Mobile overlay ke overlay dark modes me layout styles standard match hongi
-                    className="w-6 "
+                    className="w-6 h-6 "
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.9 }}
                   >
