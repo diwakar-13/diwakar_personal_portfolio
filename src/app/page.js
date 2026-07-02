@@ -24,16 +24,15 @@ export default function Home() {
 
       <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left self-center">
         {/* name  */}
-        <div>
-          {/* Parent element jo child nodes (I'm, Cover) ko stagger delay ke sath load karega */}
+        <div className="z-0">
           <motion.h1
             variants={{
               initial: { opacity: 1 },
               animate: {
                 opacity: 1,
                 transition: {
-                  delay: 0.5, // AnimatedText ke barabar delay
-                  staggerChildren: 0.08, // Word-by-word roll out sync
+                  delay: 0.5,
+                  staggerChildren: 0.08,
                 },
               },
             }}
@@ -41,7 +40,7 @@ export default function Home() {
             animate="animate"
             className="lg:text-3xl text-2xl text-left font-semibold max-w-7xl mx-auto py-2 relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white flex flex-wrap items-center"
           >
-            {/* 1. Waving Emoji (Niche se upar aayega, fir automatic wave animation shuru hogi) */}
+           
             <motion.span
               variants={{
                 initial: { opacity: 0, y: 50 },
@@ -69,7 +68,7 @@ export default function Home() {
               </motion.span>
             </motion.span>
 
-            {/* 2. Text "I'm" (Sync with animated text words) */}
+           
             <motion.span
               variants={{
                 initial: { opacity: 0, y: 50 },
@@ -80,7 +79,7 @@ export default function Home() {
               I'm&nbsp;
             </motion.span>
 
-            {/* 3. Cover Component (Sync with animated text words) */}
+          
             <motion.span
               variants={{
                 initial: { opacity: 0, y: 50 },
@@ -121,10 +120,9 @@ export default function Home() {
         </div>
       </div>
 
-      {/* UI EXACT SAME HAI (wahi -top-4 right-0). Bas z-index badha diya hai taaki koi dusra element isko block na kare */}
-      {/* UI CLASSES BILKUL SAME HAIN (-top-4 right-0 w-36 h-36 etc.). Bas inline style se zIndex ko high kiya hai taaki Header isko block na kar paye */}
-      {/* UI EXACT SAME HAI: Bas 'hidden lg:flex' kiya hai taaki mobile par duplicate na ho aur bade screen par niche sahi dikhe */}
-      <div className="hidden lg:flex absolute lg:left-4 lg:bottom-4 items-center justify-center lg:w-48 lg:h-48 z-[99999] pointer-events-none">
+     
+     {/* spinnning text */}
+      <div className="hidden lg:flex absolute lg:left-4 lg:bottom-20 xl:bottom-29 items-center justify-center lg:w-48 lg:h-48  pointer-events-none">
         <SpinningText
           radius={6}
           duration={10}
@@ -136,7 +134,7 @@ export default function Home() {
         <div className="absolute flex items-center justify-center lg:w-20 lg:h-20 rounded-full bg-black text-white font-semibold hover:bg-white hover:text-black hover:border dark:bg-light dark:text-dark dark:hover:bg-dark cursor-pointer dark:hover:text-light hover:border-gray-500 transition-all duration-300 pointer-events-auto group">
           <Link
             href="mailto:diwakarpandey410@gmail.com"
-            className="w-full h-full flex items-center justify-center rounded-full cursor-pointer relative z-[100001]"
+            className="w-full h-full flex items-center justify-center rounded-full cursor-pointer relative "
           >
             Hire Me
           </Link>
@@ -144,7 +142,7 @@ export default function Home() {
       </div>
 
       {/* light bulb */}
-      <div className="hidden xl:block absolute right-5  xl:bottom-0 w-28">
+      <div className="hidden xl:block absolute right-10  xl:bottom-30 w-28">
         <Image
           src="/lightbulb.svg"
           alt="public profile image"

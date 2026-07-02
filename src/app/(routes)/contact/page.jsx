@@ -8,6 +8,7 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import Link from "next/link";
 // IMPORT AXIOS
 import axios from "axios";
+import TransitionEffect from "@/components/TransitionEffect";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -49,14 +50,22 @@ export default function ContactPage() {
 
       // Axios automatically parses JSON, data is available in response.data
       if (response.status === 200 && response.data.success) {
-        setStatusMessage({ type: "success", text: "Message sent successfully!" });
+        setStatusMessage({
+          type: "success",
+          text: "Message sent successfully!",
+        });
         setFormData({ name: "", email: "", message: "" }); // Reset form inputs
       } else {
-        setStatusMessage({ type: "error", text: response.data.error || "Something went wrong." });
+        setStatusMessage({
+          type: "error",
+          text: response.data.error || "Something went wrong.",
+        });
       }
     } catch (error) {
       // Axios stores server error responses in error.response
-      const errorMsg = error.response?.data?.error || "Failed to send message. Please try again.";
+      const errorMsg =
+        error.response?.data?.error ||
+        "Failed to send message. Please try again.";
       setStatusMessage({ type: "error", text: errorMsg });
     } finally {
       setIsSubmitting(false);
@@ -249,7 +258,9 @@ export default function ContactPage() {
 
             {/* STATUS NOTIFICATION TEXT */}
             {statusMessage.text && (
-              <p className={`text-sm font-semibold ${statusMessage.type === "success" ? "text-green-500" : "text-red-500"}`}>
+              <p
+                className={`text-sm font-semibold ${statusMessage.type === "success" ? "text-green-500" : "text-red-500"}`}
+              >
                 {statusMessage.text}
               </p>
             )}
