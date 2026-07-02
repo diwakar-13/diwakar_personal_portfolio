@@ -1,8 +1,11 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { SpinningText } from "@/components/ui/spinning-text";
 import AnimatedText from "./_components/AnimatedText";
+import { Cover } from "@/components/ui/cover";
+import { motion } from "motion/react";
 
 export default function Home() {
   return (
@@ -20,6 +23,76 @@ export default function Home() {
       </div>
 
       <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left self-center">
+        {/* name  */}
+        <div>
+          {/* Parent element jo child nodes (I'm, Cover) ko stagger delay ke sath load karega */}
+          <motion.h1
+            variants={{
+              initial: { opacity: 1 },
+              animate: {
+                opacity: 1,
+                transition: {
+                  delay: 0.5, // AnimatedText ke barabar delay
+                  staggerChildren: 0.08, // Word-by-word roll out sync
+                },
+              },
+            }}
+            initial="initial"
+            animate="animate"
+            className="lg:text-3xl text-2xl text-left font-semibold max-w-7xl mx-auto py-2 relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white flex flex-wrap items-center"
+          >
+            {/* 1. Waving Emoji (Niche se upar aayega, fir automatic wave animation shuru hogi) */}
+            <motion.span
+              variants={{
+                initial: { opacity: 0, y: 50 },
+                animate: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 1 },
+                },
+              }}
+              className="inline-block mr-2"
+            >
+              <motion.span
+                className="inline-block text-white bg-clip-initial text-initial origin-[70%_70%]"
+                animate={{
+                  rotate: [0, 14, -8, 14, -4, 10, 0, 0],
+                }}
+                transition={{
+                  duration: 2.5,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatDelay: 1,
+                }}
+              >
+                👋
+              </motion.span>
+            </motion.span>
+
+            {/* 2. Text "I'm" (Sync with animated text words) */}
+            <motion.span
+              variants={{
+                initial: { opacity: 0, y: 50 },
+                animate: { opacity: 1, y: 0, transition: { duration: 1 } },
+              }}
+              className="inline-block mr-2 text-neutral-800 dark:text-white bg-clip-initial text-initial"
+            >
+              I'm&nbsp;
+            </motion.span>
+
+            {/* 3. Cover Component (Sync with animated text words) */}
+            <motion.span
+              variants={{
+                initial: { opacity: 0, y: 50 },
+                animate: { opacity: 1, y: 0, transition: { duration: 1 } },
+              }}
+              className="inline-block"
+            >
+              <Cover>Diwakar Pandey</Cover>
+            </motion.span>
+          </motion.h1>
+        </div>
+
         <AnimatedText
           text="Turning Vision Into Reality With Code And Design."
           className="md:!text-5xl !text-4xl  xl:!text-6xl !text-center lg:!text-left font-bold"
