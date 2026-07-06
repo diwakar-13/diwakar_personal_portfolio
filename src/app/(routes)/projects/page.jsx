@@ -62,7 +62,11 @@ const FeaturedProject = ({ type, title, summary, image, link, github }) => {
         <span className="text-pink-400 dark:text-primaryDark font-medium text-base sm:text-xl">
           {type}
         </span>
-        <Link href={link} target="_blank" className="hover:underline underline-offset-2">
+        <Link
+          href={link}
+          target="_blank"
+          className="hover:underline underline-offset-2"
+        >
           <h2 className="my-2 w-full text-left text-2xl sm:text-4xl font-bold break-words">
             {title}
           </h2>
@@ -120,7 +124,11 @@ const Project = ({ title, type, image, link, github }) => {
         <span className="text-pink-400 dark:text-primaryDark font-medium text-sm sm:text-xl">
           {type}
         </span>
-        <Link href={link} target="_blank" className="hover:underline underline-offset-2">
+        <Link
+          href={link}
+          target="_blank"
+          className="hover:underline underline-offset-2"
+        >
           <h2 className="my-2 w-full text-left text-xl sm:text-3xl font-bold break-words">
             {title}
           </h2>
@@ -131,8 +139,9 @@ const Project = ({ title, type, image, link, github }) => {
             target="_blank"
             className="underline text-base sm:text-lg font-semibold"
           >
-            <Button className="active:scale-95 rounded-md cursor-pointer bg-black border-1  dark:border-light/40 border-dark dark:text-light hover:bg-light hover:text-dark dark:hover:bg-dark px-4 hover:-translate-y-1 ease-in duration-200">Visit Project</Button>
-            
+            <Button className="active:scale-95 rounded-md cursor-pointer bg-black border-1  dark:border-light/40 border-dark dark:text-light hover:bg-light hover:text-dark dark:hover:bg-dark px-4 hover:-translate-y-1 ease-in duration-200">
+              Visit Project
+            </Button>
           </Link>
           <Link href={github} className="w-7 sm:w-8" target="_blank">
             <GithubIcon className="hover:scale-125 ease-in duration-200 active:scale-95" />
@@ -155,12 +164,12 @@ const page = () => {
       <div className="grid grid-cols-12 gap-8 sm:gap-16 lg:gap-16 xl:gap-24 gap-y-16 sm:gap-y-32 max-w-[1400px] mx-auto w-full">
         <div className="col-span-12">
           <FeaturedProject
-            title="AI UI/UX Mockup Generator"
-            summary="An AI-powered application that transforms text prompts into beautiful UI/UX screen mockups. Users simply describe their ideas in natural language, and the application generates responsive interface designs, helping designers and developers rapidly visualize concepts and accelerate the design process."
-            type="Featured Project"
-            image="/uiuxMockup.png"
-            link="https://ui-ux-mockup.vercel.app/"
-            github="https://github.com/diwakar-13/UI-UX-Mockup"
+            title="Pixivo Studio"
+            summary="Pixivo Studio is a full-stack AI SaaS platform that transforms images using advanced AI image editing models. Users can upload an image, choose from multiple artistic styles, and generate high-quality AI-enhanced results within seconds. The platform focuses on delivering a fast, modern, and intuitive editing experience while managing authentication, image storage, and usage limits."
+            type="AI-Powered Image Editing SaaS"
+            image="/pixivo_studio.png"
+            link="https://pixivo-studio.vercel.app/"
+            github="https://github.com/diwakar-13/Pixivo-Studio"
           />
         </div>
 
@@ -178,22 +187,21 @@ const page = () => {
             title="Socially -Social Media App"
             type="Full Stack Project"
             image="/socially.png"
-             link="https://socially-seven-delta.vercel.app/" 
-            github="https://github.com/diwakar-13/socially" 
+            link="https://socially-seven-delta.vercel.app/"
+            github="https://github.com/diwakar-13/socially"
           />
         </div>
 
         <div className="col-span-12">
           <FeaturedProject
-            title="Planova-Project Management"
-            summary="Planova is a modern project management platform that enables teams to plan projects, manage tasks, track progress, and collaborate seamlessly. Built with a focus on productivity, usability, and scalability, it provides an intuitive workspace for organizing and delivering projects efficiently."
-            type="Full Stack Project"
-            image="/planova.png"
-            link="https://planova-project-management-ggk9.vercel.app/"
-            github="https://github.com/diwakar-13/Planova-project-management-"
+            title="AI UI/UX Mockup Generator"
+            summary="An AI-powered application that transforms text prompts into beautiful UI/UX screen mockups. Users simply describe their ideas in natural language, and the application generates responsive interface designs, helping designers and developers rapidly visualize concepts and accelerate the design process."
+            type="Featured Project"
+            image="/uiuxMockup.png"
+            link="https://ui-ux-mockup.vercel.app/"
+            github="https://github.com/diwakar-13/UI-UX-Mockup"
           />
         </div>
-
         <div className="col-span-12 lg:col-span-6">
           <Project
             title="Basic Portfolio template"
@@ -212,7 +220,16 @@ const page = () => {
             github="https://civic-complainet.vercel.app/"
           />
         </div>
-      
+        <div className="col-span-12">
+          <FeaturedProject
+            title="Planova-Project Management"
+            summary="Planova is a modern project management platform that enables teams to plan projects, manage tasks, track progress, and collaborate seamlessly. Built with a focus on productivity, usability, and scalability, it provides an intuitive workspace for organizing and delivering projects efficiently."
+            type="Full Stack Project"
+            image="/planova.png"
+            link="https://planova-project-management-ggk9.vercel.app/"
+            github="https://github.com/diwakar-13/Planova-project-management-"
+          />
+        </div>
       </div>
     </main>
   );
