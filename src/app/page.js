@@ -40,7 +40,6 @@ export default function Home() {
             animate="animate"
             className="lg:text-3xl text-2xl text-left font-semibold max-w-7xl mx-auto py-2 relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white flex flex-wrap items-center"
           >
-           
             <motion.span
               variants={{
                 initial: { opacity: 0, y: 50 },
@@ -68,7 +67,6 @@ export default function Home() {
               </motion.span>
             </motion.span>
 
-           
             <motion.span
               variants={{
                 initial: { opacity: 0, y: 50 },
@@ -79,7 +77,6 @@ export default function Home() {
               I'm&nbsp;
             </motion.span>
 
-          
             <motion.span
               variants={{
                 initial: { opacity: 0, y: 50 },
@@ -103,7 +100,7 @@ export default function Home() {
           experiences that make an impact.
         </p>
         <div className="flex items-center self-center lg:self-start mt-2 gap-4">
-          <Link href="/resume.pdf" target="_blank" download={true}>
+          <Link href="/diwakar_resume.pdf" target="_blank" download={true}>
             <InteractiveHoverButton className="border-black dark:border-light">
               Resume
             </InteractiveHoverButton>
@@ -120,8 +117,7 @@ export default function Home() {
         </div>
       </div>
 
-     
-     {/* spinnning text */}
+      {/* spinnning text */}
       <div className="hidden lg:flex absolute lg:left-4 lg:bottom-20 xl:bottom-29 items-center justify-center lg:w-48 lg:h-48  pointer-events-none">
         <SpinningText
           radius={6}
