@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# diwakar_personal_portfolio
 
-## Getting Started
+## projectOverview
+Personal portfolio built with **Next.js (App Router)**, **React**, and **Tailwind CSS**. It includes dedicated route pages for **About**, **Projects**, and **Contact**, plus shared UI components and styling utilities.
 
-First, run the development server:
+## features
+- **About** page with structured sections (e.g., Education, Experience, Skills)
+- **Projects** page with reusable layout
+- **Contact** page with form UI
+- **Animated/interactive UI components** (e.g., transitions, animated text)
+- **Theme support** via shared theme provider components
+- **Responsive layout** using Tailwind CSS and reusable UI primitives
 
+## installation
 ```bash
+# 1) Clone the repository
+git clone <your-repo-url>
+cd diwakar_personal_portfolio
+
+# 2) Install dependencies
+npm ci
+
+# 3) Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## usage
+- Open the app in your browser (default Next.js dev server):
+  - Visit: http://localhost:3000
+- Navigate through routes:
+  - `/about`
+  - `/projects`
+  - `/contact`
+- The **Contact** page can submit data via the app’s contact API route:
+  - `POST /api/contact` (see API Reference)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## techStack
+- **Next.js** (App Router)
+- **React**
+- **Tailwind CSS**
+- **Node.js + npm** (project managed with `package.json` / `package-lock.json`)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## apiReference
+The repository exposes a serverless API route under `src/app/api`.
 
-## Learn More
+### Public API Endpoints
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/api/contact` | Contact form submission handler implemented in `src/app/api/contact/route.js` |
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Notes
+- No other public API routes are present under `src/app/api` besides the contact route listed above.
