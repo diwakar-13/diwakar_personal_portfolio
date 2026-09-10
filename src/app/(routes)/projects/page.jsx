@@ -175,11 +175,11 @@ const page = () => {
 
         <div className="col-span-12 lg:col-span-6">
           <Project
-            title="Facebook UI Clone- SocialBook"
-            type="Frontend Project"
-            image="/socialbook.png"
-            link="https://socialbook-ui-demo.onrender.com"
-            github="https://github.com/diwakar-13/Facebook-clone-socialbook"
+            title="Planova-Project Management"
+            type="Full Stack Project"
+            image="/planova.png"
+            link="https://planova-project-management-ggk9.vercel.app/"
+            github="https://github.com/diwakar-13/Planova-project-management-"
           />
         </div>
         <div className="col-span-12 lg:col-span-6">
@@ -222,12 +222,40 @@ const page = () => {
         </div>
         <div className="col-span-12">
           <FeaturedProject
-            title="Planova-Project Management"
-            summary="Planova is a modern project management platform that enables teams to plan projects, manage tasks, track progress, and collaborate seamlessly. Built with a focus on productivity, usability, and scalability, it provides an intuitive workspace for organizing and delivering projects efficiently."
-            type="Full Stack Project"
-            image="/planova.png"
-            link="https://planova-project-management-ggk9.vercel.app/"
-            github="https://github.com/diwakar-13/Planova-project-management-"
+            title="Textil - AI-Powered B2B Textile Marketplace"
+            summary="Textil is an AI-powered B2B textile marketplace that connects buyers with verified suppliers through intelligent product discovery and streamlined procurement. It features natural-language and voice search, AI-powered fabric recommendations, product comparison, similar-product suggestions, buyer and supplier workflows, inventory management, order management, and role-based dashboards."
+            type="Featured Project"
+            image="/textil.png"
+            link="https://b2b-texttile-marketplace.vercel.app/"
+            github="https://github.com/diwakar-13/b2b_texttile_marketplace"
+          />
+        </div>
+        <div className="col-span-12 lg:col-span-6">
+          <Project
+            title="Facebook UI Clone- SocialBook"
+            type="Frontend Project"
+            image="/socialbook.png"
+            link="https://socialbook-ui-demo.onrender.com"
+            github="https://github.com/diwakar-13/Facebook-clone-socialbook"
+          />
+        </div>
+        <div className="col-span-12 lg:col-span-6">
+          <Project
+            title="Basic Portfolio template"
+            type="Template"
+            image="/basic_portfolio.png"
+            link="https://diwakar-13.github.io/frontend-portfolio-project/"
+            github="https://github.com/diwakar-13/frontend-portfolio-project"
+          />
+        </div>
+        <div className="col-span-12">
+          <FeaturedProject
+            title="RepoScribe - AI Readme Generator"
+            summary="RepoScribe AI is an AI-powered developer tool that analyzes GitHub repositories and automatically generates structured, developer-friendly documentation. It simplifies understanding unfamiliar codebases by transforming repository structure and source-code context into clear documentation."
+            type="Featured Project"
+            image="/reposcribe.png"
+            link="https://ai-readme-generator-gamma.vercel.app/"
+            github="https://github.com/diwakar-13/Ai-Readme-Generator"
           />
         </div>
       </div>
